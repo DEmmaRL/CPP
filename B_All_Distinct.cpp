@@ -8,7 +8,7 @@ using namespace std;
 typedef long long int lli ;
 
 //fore
-#define fore(i, a, b) for(int i = (a); i <= (b); ++i)
+#define fore(i, a, b) for(int i = (a); i < (b); ++i)
 
 
 //ESTRUCTURAS
@@ -17,6 +17,7 @@ typedef long long int lli ;
 #define vi vector<int>
 #define vll vector<long long>
 #define mii map<int, int>
+#define msi map<string, int>
 #define mp make_pair
 
 //ABREVIATURAS
@@ -25,7 +26,7 @@ typedef long long int lli ;
 #define clr(x) memset(x, 0, sizeof(x))
 #define sortall(x) sort(all(x))
 
-#define CODED_BY_DEMMARL ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define op() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 
 //FUNCIONES
@@ -45,18 +46,49 @@ void no() { cout<<"NO\n"; }
 
 void solve() {
 
+    int n;
+    cin>>n;
+
+    vector<int>v(n);
+
+    mii mapa;
+
+    int total = 0 ;
+
+    fore(i,0,n)
+    {
+        cin>>v[i];
+        mapa[v[i]]++;
+
+        if(mapa[v[i]]>1)
+        {
+            total++;
+        }
+    }
+
+    if(total%2==1)
+    {
+        total++;
+    }
+
+    cout<<v.size() - total<<endl;
+    
+
 }
 
 
 int main()
 {
-    CODED_BY_DEMMARL;
+    ios_base :: sync_with_stdio(false);
+
+    cin.tie(NULL);
+    cout.tie(NULL);
 
     //freopen("input.txt","r",stdin);
     //freopen("output.txt","w",stdout);
 
     int tc = 1;
-     //cin >> tc;
+     cin >> tc;
     for (int t = 1; t <= tc; t++) {
         // cout << "Case #" << t << ": ";
         solve();

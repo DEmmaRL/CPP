@@ -45,6 +45,31 @@ void no() { cout<<"NO\n"; }
 
 void solve() {
 
+    lli n, k;
+    cin>>n>>k;
+
+    vector<lli>v(n);
+
+    for(int i=0; i<n; ++i)
+    {
+        cin>>v[i];
+    }
+
+    lli res = 0 , c = 0 , l = 0 ;
+
+    for(lli i=0; i<n; ++i)
+    {
+        c+=v[i];
+        while( c > k )
+        {
+            c -= v[ l ] ;
+            l++ ;
+        }
+        res = max( res , ( i - l ) + 1 );
+    }
+
+    cout<<res<<endl;
+
 }
 
 
@@ -56,7 +81,7 @@ int main()
     //freopen("output.txt","w",stdout);
 
     int tc = 1;
-     //cin >> tc;
+    // cin >> tc;
     for (int t = 1; t <= tc; t++) {
         // cout << "Case #" << t << ": ";
         solve();

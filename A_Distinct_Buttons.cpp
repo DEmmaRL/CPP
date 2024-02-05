@@ -44,6 +44,45 @@ void no() { cout<<"NO\n"; }
 
 
 void solve() {
+    int n;
+    cin>>n;
+
+    vector<pair< int , int > > v;
+    
+    set<string>st;
+
+    for(int i=0; i<n; ++i)
+    {
+        int a, b;
+        cin>>a>>b;
+
+        if( a > 0 )
+        {
+            st.insert("up");
+        }
+        if( a < 0 )
+        {
+            st.insert("down");
+        }
+        if( b > 0 )
+        {
+            st.insert("right");
+        }
+        if( b < 0 )
+        {
+            st.insert("left");
+        }
+    
+    }
+
+    if( st.size() == 4 )
+    {
+        no();
+    }
+    else
+    {
+        yes();
+    }
 
 }
 
@@ -56,7 +95,7 @@ int main()
     //freopen("output.txt","w",stdout);
 
     int tc = 1;
-     //cin >> tc;
+     cin >> tc;
     for (int t = 1; t <= tc; t++) {
         // cout << "Case #" << t << ": ";
         solve();
