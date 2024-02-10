@@ -42,38 +42,32 @@ void no() { cout<<"NO\n"; }
 // g++ main.cpp -o a && ./a < in > out
 
 
-bool isUgly(int n) {
 
-        if( n <= 0 )
+void solve() {
+    int n;
+    cin>>n;
+    vector<lli>v(n);
+    string s="";
+    map<char, int>mapa;
+    for(int i = 0; i<26; ++i)
+    {
+        mapa['a'+i]= 0;
+    }
+    for(int i=0; i<n; ++i)
+    {
+        cin>>v[i];
+        for(auto e : mapa)
         {
-            return false;
-        }
-        while( n%2==0 && n/2>=1)
-        {
-            n/=2;
-        }
-        while( n%3==0 && n/3>=1)
-        {
-            n/=3;
-        }
-        while( n%5==0 && n/5>=1)
-        {
-            n/=5;
-        }
-
-        if(n>1)
-        {
-            return false;
-        }
-        else
-
-        {
-            return true;
+            if(e.s == v[i] )
+            {
+                e.s++;
+                s+=e.f;
+                mapa[e.f]++;
+                break;
+            }
         }
     }
-    
-bool solve( int n ) {
-   return isUgly(n);
+    cout<<s<<endl;
 }
 
 
@@ -84,10 +78,11 @@ int main()
     //freopen("input.txt","r",stdin);
     //freopen("output.txt","w",stdout);
 
-    int n;
-    cin>>n;
-
-    solve(n) == true ? cout<<"true" : cout<<"false" ;
+    int tc = 1;
+     cin >> tc;
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t << ": ";
+        solve();
+    }
 
 }
-

@@ -42,38 +42,22 @@ void no() { cout<<"NO\n"; }
 // g++ main.cpp -o a && ./a < in > out
 
 
-bool isUgly(int n) {
 
-        if( n <= 0 )
-        {
-            return false;
-        }
-        while( n%2==0 && n/2>=1)
-        {
-            n/=2;
-        }
-        while( n%3==0 && n/3>=1)
-        {
-            n/=3;
-        }
-        while( n%5==0 && n/5>=1)
-        {
-            n/=5;
-        }
+void solve() {
+    string s , k ;
+    cin>>s>>k;
 
-        if(n>1)
+    sort(k.rbegin() , k.rend());
+    int cont =0;
+    for(int i=0; i<s.size(); ++i)
+    {
+        if(cont < k.size() && s[i] < k[cont])
         {
-            return false;
-        }
-        else
-
-        {
-            return true;
+            s[i]=k[cont];
+            cont++;
         }
     }
-    
-bool solve( int n ) {
-   return isUgly(n);
+    cout<<s<<endl;
 }
 
 
@@ -84,10 +68,11 @@ int main()
     //freopen("input.txt","r",stdin);
     //freopen("output.txt","w",stdout);
 
-    int n;
-    cin>>n;
-
-    solve(n) == true ? cout<<"true" : cout<<"false" ;
+    int tc = 1;
+     //cin >> tc;
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t << ": ";
+        solve();
+    }
 
 }
-

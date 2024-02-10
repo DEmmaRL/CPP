@@ -40,40 +40,42 @@ void no() { cout<<"NO\n"; }
 
 
 // g++ main.cpp -o a && ./a < in > out
+set<long>fib;
 
-
-bool isUgly(int n) {
-
-        if( n <= 0 )
-        {
-            return false;
-        }
-        while( n%2==0 && n/2>=1)
-        {
-            n/=2;
-        }
-        while( n%3==0 && n/3>=1)
-        {
-            n/=3;
-        }
-        while( n%5==0 && n/5>=1)
-        {
-            n/=5;
-        }
-
-        if(n>1)
-        {
-            return false;
-        }
-        else
-
-        {
-            return true;
-        }
-    }
+string isFibo(long n) {
     
-bool solve( int n ) {
-   return isUgly(n);
+    
+    if(fib.size() == 0 )
+    {
+        long a = 0 , b = 1 ;
+        
+        long lim = 1e10+7;
+        fib.insert(a);
+        fib.insert(b);
+        
+        while( a + b <= lim )
+        {
+            fib.insert( a + b ) ;
+            
+            long tmp = a ;
+            a=b;
+            b+=tmp;    
+        }
+    }    
+    
+    if(fib.find(n) != fib.end() )
+    {
+        return "IsFibo";
+    }
+    else {
+        return "IsNotFibo";
+    }
+}
+
+void solve() {
+    long n;
+    cin>>n;
+    cout<<isFibo(n)<<endl;
 }
 
 
@@ -84,10 +86,11 @@ int main()
     //freopen("input.txt","r",stdin);
     //freopen("output.txt","w",stdout);
 
-    int n;
-    cin>>n;
-
-    solve(n) == true ? cout<<"true" : cout<<"false" ;
+    int tc = 1;
+     //cin >> tc;
+    for (int t = 1; t <= tc; t++) {
+        // cout << "Case #" << t << ": ";
+        solve();
+    }
 
 }
-
