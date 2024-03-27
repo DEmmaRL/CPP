@@ -6,7 +6,7 @@ using namespace std;
 
 //typedef
 typedef long long int lli ;
-#define fore(i, a, b) for(int i = (a); i <= (b); ++i)
+#define fore(i, a, b) for(int i = (a); i < (b); ++i)
 #define pll pair<long long, long long>
 #define vll vector<long long>
 #define all(a) (a).begin(),(a).end()
@@ -16,6 +16,27 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    string s;
+    cin>>s;
+
+    lli res = 0  , n = s.size() ;
+
+    for(int i=0; i <n; ++i){
+        if(s[i]=='Q'){
+            for(int j=i+1 ; j < n ; ++j){
+                if(s[j]=='A'){
+                    for(int k=j+1 ; k < n ; ++k){
+                        if(s[k]=='Q'){
+                            res++;
+                        }
+                    }
+                }       
+            }
+        }
+    }
+
+
+    cout<<res<<endl;
 
 }
 
@@ -29,7 +50,7 @@ int main()
 
     int t = 1;
      //cin >> t;
-    for (int i = 1; i <= t; i++) {
+    for(int i = 1; i <= t; i++) {
         solve();
     }
 

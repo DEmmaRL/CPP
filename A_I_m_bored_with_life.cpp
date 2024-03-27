@@ -16,7 +16,18 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    lli a, b;
+    cin>>a>>b;
 
+    if(a > b) swap(a, b);
+
+    lli res = 1 ;
+
+    for(int i=1; i<=a; ++i)
+    {
+        res*=i;
+    }
+    cout<<res<<endl;
 }
 
 

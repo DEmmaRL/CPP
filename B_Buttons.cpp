@@ -16,6 +16,37 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    
+    lli n, total = 0 , k = 0 ;
+    cin>>n;
+
+    if(n==1)
+    {
+        cout<<1<<endl;
+    }
+    else 
+    {
+        for(int i=n; i>1; --i)
+        {
+            
+            //cout<<"ssz";
+            if(i!=n)
+            {
+                total++;
+
+                total += i-1 + ( ( i-1 ) * ( n - i ) ) ;
+            }
+            else
+            {
+                total+=i;
+            }
+            k++;
+        }
+        total++;
+        
+    cout<<total<<endl;
+    }
+    
 
 }
 

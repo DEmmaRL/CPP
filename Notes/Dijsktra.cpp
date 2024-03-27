@@ -68,3 +68,25 @@ void shortest_path()
     }]*/
 
 }
+
+void solve() {
+    cin>>n;
+    lli m;
+    cin>>m;
+
+    g.resize(n);
+
+    for(lli i=0; i < m; ++i)
+    {
+        lli a, b, c;
+        cin>>a>>b>>c;
+        a--;
+        b--;
+        g[a].pb({ b, c });
+        g[b].pb({ a, c });
+    }
+
+    shortest_path();
+
+
+}

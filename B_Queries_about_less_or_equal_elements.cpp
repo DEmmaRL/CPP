@@ -16,6 +16,38 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    lli n, m ;
+    cin>>n>>m;
+    map< lli , lli > mapa ;
+
+    vector<int>v(n) , b(m), tmp(m);
+    
+    for(int i=0; i<n; ++i){
+        cin>>v[i];
+    }
+    sort(all(v));
+    for(int i=0; i<m; ++i){
+        cin>>b[i];
+        tmp[i]=b[i];
+    }
+
+    sort(all(b));
+    
+    lli iter = 0 , cont = 0 ;
+
+    for( int i = 0 ; i< m ; ++i )
+    {
+        while( iter < n && v[iter] <= b[i] ){
+            iter++;
+            cont++;
+        }        
+        mapa[b[i]]= cont ;
+    }
+
+    for(int i =0; i< m; ++i){
+        cout<<mapa[tmp[i]]<<" ";
+    }
+    cout<<endl;
 
 }
 

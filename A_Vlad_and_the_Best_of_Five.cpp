@@ -16,7 +16,24 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    string s;
+    cin>>s;
 
+    map<char, int>mapa;
+
+    for(int i=0; i<s.size(); ++i)
+    {
+        mapa[s[i]]++;
+    }
+    //cout<<mapa['A']<<endl;
+    if(mapa['A']>mapa['B'])
+    {
+        cout<<"A"<<endl;
+    }
+    else
+    {
+        cout<<"B"<<endl;
+    }
 }
 
 
@@ -28,7 +45,7 @@ int main()
     //freopen("output.txt","w",stdout);
 
     int t = 1;
-     //cin >> t;
+     cin >> t;
     for (int i = 1; i <= t; i++) {
         solve();
     }

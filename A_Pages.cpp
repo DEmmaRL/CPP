@@ -16,7 +16,27 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    int n, m, k;
+    cin>>n>>m>>k;
 
+    if(m-k > 1)
+    {
+        cout<<"<< ";
+    }
+
+    for(int i= max(m - k, 1) ; i < m; ++i )
+    {
+        cout<<i<<" ";
+    }
+    cout<<"("<<m<<") ";
+    for(int i= m + 1 ; i <= min(k + m, n); ++i )
+    {
+        cout<<i<<" ";
+    }
+    if( k + m < n)
+    {
+        cout<<">>"<<endl;
+    }
 }
 
 

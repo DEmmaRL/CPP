@@ -16,6 +16,19 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    int n;
+    cin>>n;
+    vector<int>v(n);
+
+    lli res = 0 ;
+
+    for(int i=0; i<n; ++i)
+    {
+        cin>>v[i];
+        res+=abs(v[i]);
+    }
+    cout<<res<<endl;
+
 
 }
 
@@ -28,7 +41,7 @@ int main()
     //freopen("output.txt","w",stdout);
 
     int t = 1;
-     //cin >> t;
+     cin >> t;
     for (int i = 1; i <= t; i++) {
         solve();
     }

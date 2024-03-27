@@ -16,7 +16,38 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    lli n  , k;
+    cin>> n >> k ;
+    vector<lli> v( n ) ;
+    lli cont = 0 ;
 
+    for(int i = 0 ; i < n ; ++i )
+    {
+        cin >> v[ i ] ;
+        cont += v[ i ] ;
+    }
+    if( cont < k)
+    {
+        cout<<-1<<endl;
+        return ;
+    }
+    lli l = 0 , r = 0 , x = 0  , res = 1e9 ;
+
+    for( r = 0 ; r < n ; ++r )
+    {
+
+        x+=v[r];
+
+        while( x - v[l] >= k  )
+        {
+            x-=v[l];
+            l++;
+        }
+       
+    }
+
+    cout<< res << endl ;
+    
 }
 
 

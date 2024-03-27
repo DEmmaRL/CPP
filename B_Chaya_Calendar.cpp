@@ -17,6 +17,30 @@ typedef long long int lli ;
 
 void solve() {
 
+    int n;
+    cin>>n;
+
+    vector<lli>v(n);
+    cin>>v[0];
+    lli cont = v[0] ;
+
+    for(int i=1; i<n; ++i)
+    {
+        cin>>v[i];
+        if(cont%v[i] != 0)
+        {
+         //   cout<<cont<<" ";
+        cont += v[i] - (cont%v[i]) ;
+      //  cout<<cont<<endl;
+        }
+        else
+        cont+=v[i];
+
+    }
+
+    cout<<cont<<endl;
+
+
 }
 
 
@@ -28,7 +52,7 @@ int main()
     //freopen("output.txt","w",stdout);
 
     int t = 1;
-     //cin >> t;
+     cin >> t;
     for (int i = 1; i <= t; i++) {
         solve();
     }

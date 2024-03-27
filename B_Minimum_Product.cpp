@@ -15,8 +15,29 @@ typedef long long int lli ;
 
 // g++ main.cpp -o a && ./a < in > out
 
+lli f( lli a , lli b , lli x , lli y , lli n ){
+
+    lli res = max(  a - n , x  ) ;
+
+    if(res != a - n){
+        n -= a - x ;
+    } else {
+        n = 0 ;
+    }
+
+    res*= max( b - n , y ) ;
+
+    return res ;
+
+}
+
 void solve() {
 
+    lli x, y, a, b , n ;
+    cin >> a >> b >> x >> y >> n ;
+
+    lli res = min( f( a , b , x , y ,  n ) , f( b , a , y , x ,  n ) ) ;
+    cout<<res<<endl;
 }
 
 
@@ -28,7 +49,7 @@ int main()
     //freopen("output.txt","w",stdout);
 
     int t = 1;
-     //cin >> t;
+     cin >> t;
     for (int i = 1; i <= t; i++) {
         solve();
     }

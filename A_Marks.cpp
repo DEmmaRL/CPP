@@ -16,7 +16,37 @@ typedef long long int lli ;
 // g++ main.cpp -o a && ./a < in > out
 
 void solve() {
+    int n, m;
+    cin>>n>>m;
 
+    vector<string>v(n);
+
+    for(int i=0; i<n; ++i)
+    {
+        cin>>v[i];
+    }
+
+    map <int , int> mapa;
+
+    for(int i=0; i<m; ++i)
+    {
+        vector<pll> res ;
+        for(int j=0; j<n; ++j)
+        {
+            res.pb({ v[j][i], j });
+        }
+
+        sort(all(res));
+
+        int maximo = res[res.size()-1].f , iter = res.size()-1 ;
+
+        while( iter>= 0 && res[iter].f == maximo )
+        {
+            mapa[res[iter].s]++;
+            iter--;
+        }
+    }
+    cout<<mapa.size()<<endl;
 }
 
 
