@@ -1,36 +1,27 @@
 #include <bits/stdc++.h>
-using namespace std;
+#define ENDL '\n'
+#define lli long long
 #define pb push_back
-#define f first
-#define s second
+#define ff first
+#define ss second
+#define fore(i,a,b) for(int i=a;i<b;i++)
+#define all(s) begin(s), end(s)
+#define sz(s) int(s.size())
+#define IO ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0)
 
-//typedef
-typedef long long int lli ;
-#define fore(i, a, b) for(int i = (a); i <= (b); ++i)
-#define pll pair<long long, long long>
-#define vll vector<long long>
-#define all(a) (a).begin(),(a).end()
+using namespace std;
+using vi = vector<int>;
+using pii = pair<int, int>;
 
-#define IO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-
-// g++ main.cpp -o a && ./a < in > out
-
-void solve() {
+void solve(){
 
 }
 
-
-int main()
-{
+int main(){
+    // freopen("file.in","r",stdin);
+    // freopen("file.out","w",stdout);
     IO;
-
-    //freopen("input.txt","r",stdin);
-    //freopen("output.txt","w",stdout);
-
-    int t = 1;
-     //cin >> t;
-    for (int i = 1; i <= t; i++) {
-        solve();
-    }
-
+    //int t; cin>>t; while(t--)
+    solve();
+    return 0;
 }

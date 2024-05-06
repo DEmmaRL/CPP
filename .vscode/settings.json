@@ -1,0 +1,25 @@
+{
+    "cmake.sourceDirectory": "/home/demmarl/CP++",
+    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "regex": "c",
+        "utility": "c",
+        "valarray": "c",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "random": "cpp",
+        "*.tcc": "cpp",
+        "iomanip": "cpp",
+        "iosfwd": "cpp"
+    }
+}
